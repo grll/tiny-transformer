@@ -26,7 +26,7 @@ def matmul(
     for i in range(len(A)):
         for j in range(len(B[0])):
             C[i][j] = sum(
-                a_i * b_j for a_i, b_j in zip(A[i], [b_row[j] for b_row in B]) # type: ignore[misc]
+                a_i * b_j for a_i, b_j in zip(A[i], (b_row[j] for b_row in B)) # type: ignore[misc]
             )
     return C
 
